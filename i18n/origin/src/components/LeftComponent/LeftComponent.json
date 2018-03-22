@@ -1,0 +1,12 @@
+[
+  {
+    "id": "LeftComponent.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Left Side"
+  },
+  {
+    "id": "LeftComponent.button",
+    "description": "button",
+    "defaultMessage": "click"
+  }
+]

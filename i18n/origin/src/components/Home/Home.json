@@ -1,0 +1,7 @@
+[
+  {
+    "id": "Home.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Hey you are at home, locale: {locale}"
+  }
+]

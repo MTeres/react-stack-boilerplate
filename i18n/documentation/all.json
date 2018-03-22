@@ -1,0 +1,52 @@
+{
+  "Home.tittle": {
+    "id": "Home.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Hey you are at home, locale: {locale}",
+    "locales": {
+      "en": "Hey you are at home, locale: {locale}",
+      "pt": "Hey você está na home, local: {locale}",
+      "fr": "Hey vous êtes à la maison, locale: {locale}"
+    }
+  },
+  "LeftComponent.tittle": {
+    "id": "LeftComponent.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Left Side",
+    "locales": {
+      "en": "left side",
+      "pt": "lado esquerdo",
+      "fr": "côté gauche"
+    }
+  },
+  "LeftComponent.button": {
+    "id": "LeftComponent.button",
+    "description": "button",
+    "defaultMessage": "click",
+    "locales": {
+      "en": "click",
+      "pt": "clique",
+      "fr": "cliquer"
+    }
+  },
+  "RightComponent.tittle": {
+    "id": "RightComponent.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Right Side",
+    "locales": {
+      "en": "right side",
+      "pt": "Lado Direito",
+      "fr": "côté droit"
+    }
+  },
+  "RightComponent.button": {
+    "id": "RightComponent.button",
+    "description": "button",
+    "defaultMessage": "click",
+    "locales": {
+      "en": "click",
+      "pt": "clique",
+      "fr": "cliquer"
+    }
+  }
+}

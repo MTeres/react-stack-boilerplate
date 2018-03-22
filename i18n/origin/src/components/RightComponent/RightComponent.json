@@ -1,0 +1,12 @@
+[
+  {
+    "id": "RightComponent.tittle",
+    "description": "Tittle",
+    "defaultMessage": "Right Side"
+  },
+  {
+    "id": "RightComponent.button",
+    "description": "button",
+    "defaultMessage": "click"
+  }
+]

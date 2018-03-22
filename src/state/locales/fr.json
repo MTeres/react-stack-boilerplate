@@ -1,0 +1,7 @@
+{
+  "Home.tittle": "Hey vous êtes à la maison, locale: {locale}",
+  "LeftComponent.tittle": "côté gauche",
+  "LeftComponent.button": "cliquer",
+  "RightComponent.tittle": "côté droit",
+  "RightComponent.button": "cliquer"
+}
