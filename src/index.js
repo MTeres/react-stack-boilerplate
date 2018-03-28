@@ -9,6 +9,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import createStore from './state/createStore';
+import registerServiceWorker from './registerServiceWorker';
 import Layer from './containers/_Layer/Layer';
 import fr from "react-intl/locale-data/fr";
 import pt from "react-intl/locale-data/pt";
@@ -35,3 +36,4 @@ const rootElem = document.getElementById('root');
 rootElem.style.display = 'block';
 
 ReactDOM.render(createApplication(), rootElem);
+registerServiceWorker();
