@@ -1,7 +1,0 @@
-{
-  "Home.tittle": "Hey you are at home, locale: {locale}",
-  "LeftComponent.tittle": "left side",
-  "LeftComponent.button": "click",
-  "RightComponent.tittle": "right side",
-  "RightComponent.button": "click"
-}
