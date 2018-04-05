@@ -1,12 +1,15 @@
 {
-  "presets": [["env"], "react"],
+  "presets": ["env", "react"],
   "plugins": [
+    "babel-plugin-transform-runtime",
+    "react-hot-loader/babel",
+    "syntax-dynamic-import",
     ["react-intl",
       {
         "messagesDir": "./i18n/origin"
       }
     ],
-    ["transform-class-properties"],
-    ["transform-object-rest-spread"]
+    "transform-class-properties",
+    "transform-object-rest-spread"
   ]
 }

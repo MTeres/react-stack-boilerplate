@@ -7,15 +7,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 const { rules, resolve } = require('./webpack.common');
-const config = require('../config');
+const config = require('./config');
 
 const { env, publicPath, utils, paths, globals, devServer } = config;
 
 module.exports = {
   entry: [
+    'react-hot-loader/patch',
     `webpack-dev-server/client?http://${devServer.host}:${devServer.port}`,
-    'webpack/hot/dev-server',
-    utils.paths.entry(),
+    'webpack/hot/only-dev-server',
+    utils.paths.developmentEntry(),
   ],
   mode: env,
   devtool: 'inline-source-map',

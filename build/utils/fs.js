@@ -4,7 +4,7 @@
 const fs = require('fs-extra');
 
 const logger = require('./logger');
-const { utils } = require('../config');
+const { utils } = require('../config/index');
 
 const copyPublic = () => new Promise((resolve, reject) => {
   logger.line('cyan', '📸  ');

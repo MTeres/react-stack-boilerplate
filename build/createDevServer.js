@@ -14,22 +14,20 @@ const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMi
 const openBrowser = require('react-dev-utils/openBrowser');
 const clearConsole = require('react-dev-utils/clearConsole');
 
-const logger = require('./logger');
-const appConfig = require('../config');
+const appConfig = require('./config');
 const webpackDevConfig = require('./webpack.config.dev');
-const { devServer } = appConfig;
+const logger = require('./utils/logger');
 
-const useYarn = fs.existsSync(appConfig.utils.paths.base('yarn.lock'));
 const isInteractive = process.stdout.isTTY;
 
 /* ------------------------------------------
    Create server config
 --------------------------------------------- */
-const createConfig = allowedHost => ({
+const createConfig = (appConfig, allowedHost) => ({
   disableHostCheck: appConfig.devServer.disableHostCheck,
   compress: true,
   clientLogLevel: 'info',
-  contentBase: `/${appConfig.paths.dist}`,
+  contentBase: appConfig.utils.paths.public(),
   watchContentBase: true,
   hot: true,
   publicPath: appConfig.publicPath,
@@ -37,9 +35,12 @@ const createConfig = allowedHost => ({
   watchOptions: {
     ignored: /node_modules/,
   },
+  overlay: {
+    warnings: false,
+    errors: true,
+  },
   https: appConfig.devServer.https,
   host: appConfig.devServer.host,
-  overlay: false,
   historyApiFallback: {
     disableDotRule: true,
   },
@@ -57,6 +58,10 @@ const createDevServer = () => {
   if (isInteractive) {
     clearConsole();
   }
+
+  const { devServer } = appConfig;
+  const useYarn = fs.existsSync(appConfig.utils.paths.base('yarn.lock'));
+
   logger.line('cyan', '🚀  ');
   logger.cyan('Staring dev server');
   return choosePort(devServer.host, devServer.port)
@@ -73,7 +78,7 @@ const createDevServer = () => {
 
       const server = new WebpackDevServer(
         compiler,
-        createConfig(urls.lanUrlForConfig)
+        createConfig(appConfig, urls.lanUrlForConfig)
       );
       server.listen(devServer.port, devServer.host, err => {
         if (err) {

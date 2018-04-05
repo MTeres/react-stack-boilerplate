@@ -14,3 +14,12 @@ export const hasParentNodeWithId = (elem, id) => { // eslint-disable-line
   return false;
 };
 
+export const prepareRootLayout = (reactRoot, appLoaderId) => {
+  if (appLoaderId) {
+    const AppLoaderElem = document.getElementById(appLoaderId);
+    AppLoaderElem.parentNode.removeChild(AppLoaderElem);
+  }
+  const rootElem = document.getElementById(reactRoot);
+  rootElem.style.display = 'block';
+  return rootElem;
+};

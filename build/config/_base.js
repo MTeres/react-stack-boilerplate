@@ -7,13 +7,14 @@ config = {
   appName: 'Chance React Starter',
   env: process.env.NODE_ENV || 'development',
   paths: {
-    base: resolve(__dirname, '..'),
+    base: resolve(__dirname, '..', '..'),
     src: 'src',
     config: 'config',
     build: 'build',
     dist: 'dist',
     static: 'static',
     public: 'public',
+    i18n: 'i18n',
   },
   devServer: {
     https: false,
@@ -21,9 +22,13 @@ config = {
     port: process.env.PORT || 3000,
     disableHostCheck: false,
   },
-  publicPath: '/static',
+  publicPath: '/static/',
   indexReplace: {
     PUBLIC_URL: '/',
+  },
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'pt', 'fr'],
   },
 };
 
@@ -42,7 +47,9 @@ config.utils = {
       dist : base.bind(null, config.paths.dist),
       distStatic : base.bind(null, config.paths.dist, config.paths.static),
       public : base.bind(null, config.paths.public),
-      entry: base.bind(null, config.paths.src, 'index'),
+      developmentEntry: base.bind(null, config.paths.src, 'development'),
+      productionEntry: base.bind(null, config.paths.src, 'production'),
+      i18n : base.bind(null, config.paths.i18n),
     };
   })(),
 };

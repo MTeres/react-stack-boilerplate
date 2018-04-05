@@ -5,10 +5,10 @@ const webpack = require('webpack');
 const formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
 const clearConsole = require('react-dev-utils/clearConsole');
 
-const { paths } = require('../config');
+const { paths } = require('./config');
 const prodConfig = require('../build/webpack.config.prod');
-const { copyPublic, cleanDist } = require('./fs');
-const logger = require('./logger');
+const { copyPublic, cleanDist } = require('./utils/fs');
+const logger = require('./utils/logger');
 
 const isInteractive = process.stdout.isTTY;
 
@@ -17,7 +17,7 @@ const compile = () => new Promise((resolve, reject) => {
     clearConsole();
   }
   logger.line('cyan', '🚀  ');
-  logger.cyan('Start compiler');
+  logger.cyan(`Start compiler for ${process.env.BACKEND_ENV.toUpperCase()} mode`);
   logger.line('cyan');
   copyPublic()
     .then(() => {

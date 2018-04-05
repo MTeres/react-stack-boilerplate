@@ -7,6 +7,7 @@ compile()
   .then(() => {
     process.exit(0);
   })
-  .catch(() => {
+  .catch(e => {
+    console.log(e);
     process.exit(1);
   });

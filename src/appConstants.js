@@ -12,10 +12,8 @@ const development = { // For development environment only
   CHANCE_PROFILE_URL: 'http://localhost:3000',
 };
 
-// Merge configuration constants based on REACT_APP_ENV
-// More about env constants : https://goo.gl/r2V3sy
 const appConstants = () => {
-  switch (process.env.REACT_APP_STACK) {
+  switch (process.env.BACKEND_ENV) {
     default: {
       return Object.assign({
         env: 'development',

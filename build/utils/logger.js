@@ -40,6 +40,14 @@ const webpackStats = (stats, { paths }) => {
   // regular(stats);
 };
 
+const webpackProgressBarFormat = () => {
+  return ' |' + chalk.green(':bar') + '| '
+    + chalk.green.bold(':percent') + '  ' + chalk.cyan(':msg');
+};
+const webpackProgressBarSummary = time => {
+  return console.log(chalk.green.bold(` 😍  Build success in ${time}`), '\n');
+};
+
 const OSEmojiSpaceResolver = () => {
   switch (os.type()) {
     case 'Darwin': {
@@ -91,6 +99,8 @@ module.exports = {
   magenta: magenta(),
   green: green(),
   webpackStats,
+  webpackProgressBarFormat,
+  webpackProgressBarSummary,
   regular,
   line,
   dots,

@@ -5,8 +5,8 @@ const webpack = require('webpack');
 const clearConsole = require('react-dev-utils/clearConsole');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const logger = require('./logger');
-const { paths } = require('../config');
+const logger = require('./utils/logger');
+const { paths } = require('./config');
 const prodConfig = require('./webpack.config.prod');
 
 const isInteractive = process.stdout.isTTY;
